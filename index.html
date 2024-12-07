@@ -105,6 +105,48 @@
       box-shadow: 0px 10px 20px rgba(218, 177, 13, 0.5);
     }
 
+    /* Token Address Section */
+    .token-address-section {
+      margin: 20px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .token-address-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #ffd700;
+      padding: 10px 20px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    #token-address {
+      font-size: 1.5rem;
+      color: #ffd700;
+      word-break: break-all;
+      font-weight: bold;
+    }
+
+    .copy-button {
+      background: linear-gradient(90deg, #ffd700, #e0c00b);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .copy-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 10px 20px rgba(218, 177, 13, 0.5);
+    }
+
     /* Description Box */
     .description-box {
       margin: 20px auto;
@@ -179,11 +221,11 @@
 </head>
 <body>
   <div class="hero">
-    <h1>Taped To Wall Until $30M Market Cap</h1>
+    <h1>Taped To Wall Until $30 Million Market Cap $DUCTWALL</h1>
     <div class="livestream-section">
       <img src="TAPE.png" alt="Person Taped to Wall">
       <div class="livestream">
-        <iframe src="https://kick.com/category/crypto-and-trading" title="Live Stream"></iframe>
+        <iframe src="https://kick.com/ducttapedtowall" title="Live Stream"></iframe>
       </div>
       <img src="TAPE.png" alt="Person Taped to Wall">
     </div>
@@ -193,37 +235,55 @@
     </div>
 
     <div class="buttons">
-      <a href="https://twitter.com/yourcoin" target="_blank" class="button">Twitter</a>
-      <a href="https://t.me/yourcoin" target="_blank" class="button">Dex Screener</a>
+      <a href="https://twitter.com/ducttapedtowall" target="_blank" class="button">Twitter</a>
+      <a href="https://dexscreener.com/" target="_blank" class="button">Dex Screener</a>
       <a href="https://pump.fun/yourcoin" target="_blank" class="button">Pump.fun</a>
       <a href="https://raydium.io" target="_blank" class="button">Raydium</a>
       <a href="https://kick.com/yourstream" target="_blank" class="button">Kick Stream</a>
     </div>
-  </div>
-
-  <!-- How to Buy Section -->
-  <div class="how-to-buy">
-    <h2>How to Buy</h2>
-    <div class="step">
-      <h3>1. DOWNLOAD PHANTOM</h3>
-      <p>Download Phantom or your wallet of choice from the store. Desktop users, download the Google Chrome extension by going to Phantomapp.</p>
+  
+      <!-- Token Address Display Section -->
+      <div class="token-address-section">
+        <div class="token-address-box">
+          <p id="token-address"> TOKEN TO BE ANNOUNCED 1234567890abcdef</p>
+          <button class="copy-button" onclick="copyTokenAddress()">Copy</button>
+        </div>
+      </div>
     </div>
-    <div class="step">
-      <h3>2. GET SOME SOLANA</h3>
-      <p>If you don’t have any Solana, you can buy directly on Phantom, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
+  
+    <!-- How to Buy Section -->
+    <div class="how-to-buy">
+      <h2>How to Buy</h2>
+      <div class="step">
+        <h3>1. DOWNLOAD PHANTOM</h3>
+        <p>Download Phantom or your wallet of choice from the store. Desktop users, download the Google Chrome extension by going to Phantomapp.</p>
+      </div>
+      <div class="step">
+        <h3>2. GET SOME SOLANA</h3>
+        <p>If you don’t have any Solana, you can buy directly on Phantom, transfer from another wallet, or buy on another exchange and send it to your wallet.</p>
+      </div>
+      <div class="step">
+        <h3>3. GO TO RAYDIUM.IO</h3>
+        <p>Now that you have some Solana, head to Raydium to be able to swap currency of $SOL to $DUCTWALL</p>
+      </div>
+      <div class="step">
+        <h3>4. BUY $DUCT</h3>
+        <p>Paste the token address (CA) into Raydium and switch SOL for $DUCTWALL. Now help us share and spread the word to pump us to $30 MILLION!</p>
+      </div>
     </div>
-    <div class="step">
-      <h3>3. GO TO RAYDIUM.IO</h3>
-      <p>Now that you have some Solana, head to Raydium to be able to swap currency of $SOL to $DUCTWALL
-    </div>
-    <div class="step">
-      <h3>4. BUY $DUCT</h3>
-      <p>Paste the token address (CA) into Raydium and switch SOL for $DUCTWALL. Now help us share and spread the word to pump us to $30 MILLION!</p>
-    </div>
-</div>
-
-<footer>
-  <p>$DUCTWALL $DUCTWALL $DUCTWALL $DUCTWALL $DUCTWALL $DUCTWALL$DUCTWALL $DUCTWALL $DUCTWALL</p>
-</footer>
-</body>
-</html>
+  
+    <footer>
+      <p>$DUCTWALL $DUCTWALL $DUCTWALL $DUCTWALL $DUCTWALL $DUCTWALL $DUCTWALL $DUCTWALL $DUCTWALL</p>
+    </footer>
+  
+    <script>
+      function copyTokenAddress() {
+        const tokenAddress = document.getElementById('token-address').innerText;
+        navigator.clipboard.writeText(tokenAddress)
+          .then(() => alert('Token address copied to clipboard!'))
+          .catch(err => alert('Failed to copy token address: ' + err));
+      }
+    </script>
+  </body>
+  </html>
+  
